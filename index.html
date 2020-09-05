@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css"
+      integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+      crossorigin="anonymous"
+    />
+
+    <title>CN Joke Box</title>
+    <style>
+      #loader,
+      #jokes {
+        display: none;
+      }
+      ul {
+        list-style: none; /* Remove default bullets */
+      }
+
+      ul li::before {
+        content: "\2022"; /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        font-size: 1.5rem;
+        color: #17a2b8; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+      }
+      ul li {
+        font-size: smaller;
+      }
+    </style>
+  </head>
+  <body class="bg-secondary">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="card card-body text-center mt-5">
+            <h3 class="heading display-6 pb-3 text-info">
+              CHUCK NORRIS JOKE BOX
+            </h3>
+            <form id="joke-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Number of Jokes</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="amount"
+                    placeholder="0"
+                  />
+                </div>
+              </div>
+              <!-- <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">%</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="intrest"
+                    placeholder="Intrest"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  id="years"
+                  placeholder="Years To Repay"
+                />
+              </div> -->
+              <div class="form-group">
+                <input
+                  type="Submit"
+                  value="Get Joke(s)"
+                  class="btn btn-info btn-block"
+                />
+              </div>
+            </form>
+            <!-- Loader -->
+            <div id="loader">
+              <img src="img/loading.gif" alt="" />
+            </div>
+            <!-- Results -->
+            <div id="jokes" class="pt-2">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title mb-4 text-info">Here You Go!</h5>
+
+                  <h6
+                    class="card-subtitle mb-1 text-muted"
+                    style="text-align: justify"
+                  >
+                    Chuck Norris Joke(s)
+                  </h6>
+                  <div style="text-align: justify">
+                    <ul id="joke-list" class="pr-4"></ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Monthly Payment</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="monthly-payment"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Payment</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="total-payment"
+                    disabled
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Intrest</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="total-intrest"
+                    disabled
+                  />
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"
+      integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
+      integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="app.js"></script>
+  </body>
+</html>
