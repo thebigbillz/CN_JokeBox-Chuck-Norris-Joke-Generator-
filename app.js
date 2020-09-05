@@ -12,7 +12,6 @@ document.getElementById("joke-form").addEventListener("submit", function (e) {
 //Calculate Results
 function calculateResults(e) {
   //Hide Loader
-  document.getElementById("loader").style.display = "none";
 
   //Get Input Field
   const number = document.getElementById("amount").value;
@@ -24,6 +23,7 @@ function calculateResults(e) {
 
   xhr.onload = function () {
     if (this.status === 200) {
+      document.getElementById("loader").style.display = "none";
       document.getElementById("jokes").style.display = "block";
       const res = JSON.parse(this.responseText).value;
       let output = "";
