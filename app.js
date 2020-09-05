@@ -37,7 +37,7 @@ function calculateResults(e) {
         console.log(this.responseText);
       } else {
         document.getElementById("loader").style.display = "none";
-        showError("Enter a number greter than 0");
+        showError("Enter a number greater than 0");
       }
     }
   };
