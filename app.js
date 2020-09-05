@@ -23,19 +23,22 @@ function calculateResults(e) {
 
   xhr.onload = function () {
     if (this.status === 200) {
-      document.getElementById("loader").style.display = "none";
-      document.getElementById("jokes").style.display = "block";
-      const res = JSON.parse(this.responseText).value;
-      let output = "";
-      res.forEach((re) => {
-        output += `
-        <li>${re.joke}</li>
-        `;
-      });
-      document.getElementById("joke-list").innerHTML = output;
-      console.log(this.responseText);
-    } else {
-      showError("Some Error Occured");
+      if (!(isNaN(number) || number < 1)) {
+        document.getElementById("loader").style.display = "none";
+        document.getElementById("jokes").style.display = "block";
+        const res = JSON.parse(this.responseText).value;
+        let output = "";
+        res.forEach((re) => {
+          output += `
+          <li>${re.joke}</li>
+          `;
+        });
+        document.getElementById("joke-list").innerHTML = output;
+        console.log(this.responseText);
+      } else {
+        document.getElementById("loader").style.display = "none";
+        showError("Enter a number greter than 0");
+      }
     }
   };
 
@@ -59,5 +62,5 @@ function showError(error) {
   // Clear Error
   setTimeout(() => {
     errorDiv.remove();
-  }, 2000);
+  }, 3000);
 }
